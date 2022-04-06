@@ -8,4 +8,5 @@ export class User{
     email: string = "";
     isReviewer: boolean = false;
     isAdmin: boolean = false;
+  
 }

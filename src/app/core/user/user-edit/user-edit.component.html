@@ -1,0 +1,45 @@
+<app-menu></app-menu>
+<div>
+    <span id="pageTitle">User Change</span>
+</div>
+<table *ngIf="user" class="table table-sm table-striped">
+    <tr>
+        <th>Id:</th>
+        <td><input [(ngModel)]="user.id" type="number" readonly ></td>
+    </tr>
+    <tr>
+        <th>Username:</th>
+        <td><input [(ngModel)]="user.username" type="string"  ></td>
+    </tr>
+    <tr>
+        <th>Password:</th>
+        <td><input [(ngModel)]="user.password" type="string" ></td>
+    </tr>
+    <tr>
+        <th>Firstname</th>
+        <td><input [(ngModel)]="user.firstname" type="string"  ></td>
+    </tr>
+    <tr>
+        <th>Lastname</th>
+        <td><input [(ngModel)]="user.lastname" type="string"></td>
+    </tr>
+    <tr>
+        <th>Phone:</th>
+        <td><input [(ngModel)]="user.phone" type="string"  ></td>
+    </tr>
+    <tr>
+        <th>Email:</th>
+        <td><input [(ngModel)]="user.email" type="string"  ></td>
+    </tr>
+    <tr>
+        <th>Is Reviewer</th>
+        <td><input [(ngModel)]="user.isReviewer" type="checkbox"  ></td>
+    </tr>
+    <tr>
+        <th>Is Admin</th>
+        <td><input [(ngModel)]="user.isAdmin" type="checkbox"  ></td>
+    </tr>
+</table>
+<div>
+    <button (click)="save()" class="btn btn-primary">Save</button>
+</div>>

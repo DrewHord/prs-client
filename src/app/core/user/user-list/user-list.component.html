@@ -1,0 +1,38 @@
+<app-menu></app-menu>
+<div>
+    <span id="pageTitle">User List</span>:
+    <a routerLink="/user/create">New</a>
+</div>
+<table class="table table-sm table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Is Reviewer</th>
+            <th>Is Admin</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of users">
+            <td>{{ u.id }}</td>
+            <td>{{ u.username }}</td>
+            <td>{{ u.password }}</td>
+            <td>{{ u.firstname }}</td>
+            <td>{{ u.lastname }}</td>
+            <td>{{ u.phone }}</td>
+            <td>{{ u.email }}</td>
+            <td>{{ u.isReviewer }}</td>
+            <td>{{ u.isAdmin }}</td>
+            <td>
+                <a routerLink="/user/detail/{{u.id}}">Detail </a> |
+                <a routerLink="/user/edit/{{u.id}}">Edit</a>
+            </td>
+
+        </tr> 
+    </tbody>
+</table>

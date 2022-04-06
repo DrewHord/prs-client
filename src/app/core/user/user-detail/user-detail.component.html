@@ -1,0 +1,48 @@
+<app-menu></app-menu>
+<div>
+    <span id="pageTitle">User Detail</span>
+</div>
+<table *ngIf="user" class="table table-sm table-striped">
+    <tr>
+        <th>Id:</th>
+        <td><input [(ngModel)]="user.id" type="number" readonly ></td>
+    </tr>
+    <tr>
+        <th>Username:</th>
+        <td><input [(ngModel)]="user.username" type="string" readonly ></td>
+    </tr>
+    <tr>
+        <th>Password:</th>
+        <td><input [(ngModel)]="user.password" type="string" readonly ></td>
+    </tr>
+    <tr>
+        <th>Firstname</th>
+        <td><input [(ngModel)]="user.firstname" type="string" readonly ></td>
+    </tr>
+    <tr>
+        <th>Lastname</th>
+        <td><input [(ngModel)]="user.lastname" type="string" readonly ></td>
+    </tr>
+    <tr>
+        <th>Phone:</th>
+        <td><input [(ngModel)]="user.phone" type="string" readonly ></td>
+    </tr>
+    <tr>
+        <th>Email:</th>
+        <td><input [(ngModel)]="user.email" type="string" readonly ></td>
+    </tr>
+    <tr>
+        <th>Is Reviewer</th>
+        <td><input [(ngModel)]="user.isReviewer" type="checkbox" readonly ></td>
+    </tr>
+    <tr>
+        <th>Is Admin</th>
+        <td><input [(ngModel)]="user.isAdmin" type="checkbox" readonly ></td>
+    </tr>
+</table>
+<div>
+    <button (click)="remove()" class="btn btn-danger">Delete</button>
+    <span *ngIf="showVerifyButton">
+            <button (click)="verifyRemove()" class="btn btn-danger">Verify Delete</button>
+    </span>
+</div>
