@@ -9,7 +9,7 @@ import { Vendor } from './vendor.class';
 })
 export class VendorService {
 
-  baseUrl: string = "http://localhost:14474/api/users";
+  baseUrl: string = "http://localhost:14474/api/vendors";
 
   constructor(
     private http: HttpClient
@@ -23,12 +23,12 @@ get(id: number): Observable<Vendor>{
   return this.http.get(`${this.baseUrl}/${id}`) as Observable<Vendor>;
 }
 
-create(user: Vendor): Observable<Vendor> {
-  return this.http.post(`${this.baseUrl}`, user) as Observable<Vendor>;
+create(vendor: Vendor): Observable<Vendor> {
+  return this.http.post(`${this.baseUrl}`, vendor) as Observable<Vendor>;
 }
 
-change(user: Vendor): Observable<any> {
-  return this.http.put(`${this.baseUrl}/${user.id}`, user) as Observable<any>;
+change(vendor: Vendor): Observable<any> {
+  return this.http.put(`${this.baseUrl}/${vendor.id}`, vendor) as Observable<any>;
 }
 
 remove(id: number): Observable<any> {

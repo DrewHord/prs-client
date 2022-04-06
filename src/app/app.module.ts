@@ -14,6 +14,12 @@ import { UserDetailComponent } from './core/user/user-detail/user-detail.compone
 import { UserCreateComponent } from './core/user/user-create/user-create.component';
 import { UserEditComponent } from './core/user/user-edit/user-edit.component';
 import { UserLoginComponent } from './core/user/user-login/user-login.component';
+import { VendorListComponent } from './core/vendor/vendor-list/vendor-list.component';
+import { VendorDetailComponent } from './core/vendor/vendor-detail/vendor-detail.component';
+import { VendorCreateComponent } from './core/vendor/vendor-create/vendor-create.component';
+import { VendorEditComponent } from './core/vendor/vendor-edit/vendor-edit.component';
+import { ProductListComponent } from './core/product/product-list/product-list.component';
+import { ProductDetailComponent } from './core/product/product-detail/product-detail.component';
 
 
 @NgModule({
@@ -28,6 +34,12 @@ import { UserLoginComponent } from './core/user/user-login/user-login.component'
     UserCreateComponent,
     UserEditComponent,
     UserLoginComponent,
+    VendorListComponent,
+    VendorDetailComponent,
+    VendorCreateComponent,
+    VendorEditComponent,
+    ProductListComponent,
+    ProductDetailComponent,
    
     
   ],
