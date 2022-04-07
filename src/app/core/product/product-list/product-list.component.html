@@ -12,7 +12,7 @@
             <th>Price</th>
             <th>Unit</th>
             <th>Photopath</th>
-            <th>VendorId</th>
+            <th>Vendor</th>
             <th>Actions</th>         
         </tr>
     </thead>
@@ -25,7 +25,7 @@
             <td>{{ p.price }}</td>
             <td>{{p.unit }}</td>
             <td>{{ p.photopath }}</td>
-            <td>{{ p.vendorId }}</td>        
+            <td>{{ p.vendor.name }}</td>        
             <td>
                 <a routerLink="/product/detail/{{p.id}}">Detail </a> |
                 <a routerLink="/product/edit/{{p.id}}">Edit</a>

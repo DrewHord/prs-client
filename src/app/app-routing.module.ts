@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './core/about/about.component';
 import { E404Component } from './core/e404/e404.component';
 import { HomeComponent } from './core/home/home.component';
+import { ProductCreateComponent } from './core/product/product-create/product-create.component';
 import { ProductDetailComponent } from './core/product/product-detail/product-detail.component';
+import { ProductEditComponent } from './core/product/product-edit/product-edit.component';
 import { ProductListComponent } from './core/product/product-list/product-list.component';
 import { UserCreateComponent } from './core/user/user-create/user-create.component';
 import { UserDetailComponent } from './core/user/user-detail/user-detail.component';
@@ -33,6 +35,8 @@ const routes: Routes = [
 
   { path: "product/list", component: ProductListComponent},
   { path: "product/detail/:id", component: ProductDetailComponent},
+  { path: "product/create", component: ProductCreateComponent},
+  { path: "product/edit/:id", component: ProductEditComponent},
 
   
 

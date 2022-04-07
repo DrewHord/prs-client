@@ -20,6 +20,8 @@ import { VendorCreateComponent } from './core/vendor/vendor-create/vendor-create
 import { VendorEditComponent } from './core/vendor/vendor-edit/vendor-edit.component';
 import { ProductListComponent } from './core/product/product-list/product-list.component';
 import { ProductDetailComponent } from './core/product/product-detail/product-detail.component';
+import { ProductCreateComponent } from './core/product/product-create/product-create.component';
+import { ProductEditComponent } from './core/product/product-edit/product-edit.component';
 
 
 @NgModule({
@@ -40,6 +42,8 @@ import { ProductDetailComponent } from './core/product/product-detail/product-de
     VendorEditComponent,
     ProductListComponent,
     ProductDetailComponent,
+    ProductCreateComponent,
+    ProductEditComponent,
    
     
   ],
