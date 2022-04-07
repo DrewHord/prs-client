@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { SystemService } from 'src/app/system.service';
 import { UserService } from '../user.service';
+import { User } from '../user.class';
 
 @Component({
   selector: 'app-user-login',
@@ -12,21 +15,31 @@ export class UserLoginComponent implements OnInit {
   password: string = "";
 
   constructor(
-    private logsvc: UserService
+    private syssvc: SystemService,
+    private router: Router,
+    private usersvc: UserService,
   ) { }
 
   submit(): void {
-    this.logsvc.login(this.username, this.password).subscribe({
+    this.usersvc.login(this.username, this.password).subscribe({
       next: (res) => {
-        console.log("Login succesful!")
+        console.log("Login succesful!");
+        this.syssvc.setLoggedInUser(res as User);
+        this.router.navigateByUrl("/request/list")
       },
       error: (err) => {
-        console.error("Login unsuccessful!")
+        if(err.error.status == 404){
+          console.error("Login unsuccessful!");
+          return;
+        }
+          console.debug(err)
       }
     })
   }
 
   ngOnInit(): void {
+    
   }
+
 
 }

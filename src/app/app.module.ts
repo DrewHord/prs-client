@@ -22,6 +22,10 @@ import { ProductListComponent } from './core/product/product-list/product-list.c
 import { ProductDetailComponent } from './core/product/product-detail/product-detail.component';
 import { ProductCreateComponent } from './core/product/product-create/product-create.component';
 import { ProductEditComponent } from './core/product/product-edit/product-edit.component';
+import { RequestDetailComponent } from './core/request/request-detail/request-detail.component';
+import { RequestListComponent } from './core/request/request-list/request-list.component';
+import { RequestCreateComponent } from './core/request/request-create/request-create.component';
+import { RequestEditComponent } from './core/request/request-edit/request-edit.component';
 
 
 @NgModule({
@@ -44,6 +48,10 @@ import { ProductEditComponent } from './core/product/product-edit/product-edit.c
     ProductDetailComponent,
     ProductCreateComponent,
     ProductEditComponent,
+    RequestDetailComponent,
+    RequestListComponent,
+    RequestCreateComponent,
+    RequestEditComponent,
    
     
   ],

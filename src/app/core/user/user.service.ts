@@ -35,7 +35,7 @@ remove(id: number): Observable<any> {
 }
 
 login(username: string, password: string): Observable<User> {
-  return this.http.get(`http://localhost:14474/api/users/${username}/${password}`) as Observable<User>
+  return this.http.get(`${this.baseUrl}/${username}/${password}`) as Observable<User>
 }
 
 }
