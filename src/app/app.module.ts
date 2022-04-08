@@ -26,6 +26,10 @@ import { RequestDetailComponent } from './core/request/request-detail/request-de
 import { RequestListComponent } from './core/request/request-list/request-list.component';
 import { RequestCreateComponent } from './core/request/request-create/request-create.component';
 import { RequestEditComponent } from './core/request/request-edit/request-edit.component';
+import { RequestLinesComponent } from './core/request/request-lines/request-lines.component';
+
+import { RequestlineCreateComponent } from './core/requestline/requestline-create/requestline-create.component';
+import { RequestlineEditComponent } from './core/requestline/requestline-edit/requestline-edit.component';
 
 
 @NgModule({
@@ -52,6 +56,10 @@ import { RequestEditComponent } from './core/request/request-edit/request-edit.c
     RequestListComponent,
     RequestCreateComponent,
     RequestEditComponent,
+    RequestLinesComponent,
+
+    RequestlineCreateComponent,
+    RequestlineEditComponent,
    
     
   ],

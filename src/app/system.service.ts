@@ -32,7 +32,7 @@ clearlogUser(){
 
 isLogged(): void {
   if(!this.login){
-    this.router.navigateByUrl("/login")
+    this.router.navigateByUrl("/user/login")
   }
 }
     

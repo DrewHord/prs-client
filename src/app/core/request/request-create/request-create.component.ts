@@ -34,15 +34,7 @@ export class RequestCreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.sys.isLogged();
-    this.usersvc.list().subscribe(
-      users => {
-        this.user = users;
-      }, 
-      err => {
-        console.error(err);
-      }
-    );
-    this.request.userId = this.sys._user!.id;
+   
   }
 
 }

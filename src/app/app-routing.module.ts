@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './core/about/about.component';
 import { E404Component } from './core/e404/e404.component';
@@ -10,7 +10,10 @@ import { ProductListComponent } from './core/product/product-list/product-list.c
 import { RequestCreateComponent } from './core/request/request-create/request-create.component';
 import { RequestDetailComponent } from './core/request/request-detail/request-detail.component';
 import { RequestEditComponent } from './core/request/request-edit/request-edit.component';
+import { RequestLinesComponent } from './core/request/request-lines/request-lines.component';
 import { RequestListComponent } from './core/request/request-list/request-list.component';
+import { RequestlineCreateComponent } from './core/requestline/requestline-create/requestline-create.component';
+import { RequestlineEditComponent } from './core/requestline/requestline-edit/requestline-edit.component';
 import { UserCreateComponent } from './core/user/user-create/user-create.component';
 import { UserDetailComponent } from './core/user/user-detail/user-detail.component';
 import { UserEditComponent } from './core/user/user-edit/user-edit.component';
@@ -46,6 +49,11 @@ const routes: Routes = [
   { path: "request/detail/:id", component: RequestDetailComponent},
   { path: "request/create", component: RequestCreateComponent},
   { path: "request/edit/:id", component: RequestEditComponent},
+  { path: "request/lines/:id", component: RequestLinesComponent},
+
+  { path: "requestlines/create/:id", component: RequestlineCreateComponent},
+  { path: "requestlines/edit/:id", component: RequestlineEditComponent },
+  
 
 
 
