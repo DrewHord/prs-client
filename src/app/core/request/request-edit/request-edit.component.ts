@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { User } from '../../user/user.class';
-import { UserService } from '../../user/user.service';
 import { RequestService } from '../request.service';
 import { Request } from '../request.class';
 import { SystemService } from 'src/app/system.service';
+import { User } from '../../user/user.class';
+
 
 @Component({
   selector: 'app-request-edit',
@@ -14,8 +14,8 @@ import { SystemService } from 'src/app/system.service';
 export class RequestEditComponent implements OnInit {
   
   request!: Request;
-  user!: User[]
 
+ 
 
 
   constructor(
@@ -27,9 +27,9 @@ export class RequestEditComponent implements OnInit {
   ) { }
 
   save(): void{
-    this.reqsvc.create(this.request).subscribe({
+    this.reqsvc.change(this.request).subscribe({
       next: (res) => {
-        console.debug("Request added");
+        console.debug("Request edited");
         this.router.navigateByUrl("/request/list")
       },
       error: (err) => {
@@ -39,18 +39,17 @@ export class RequestEditComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.sys.chkLogin();
-    let id = +this.route.snapshot.params["id"];
+      
+    let id = this.route.snapshot.params["id"];
     this.reqsvc.get(id).subscribe({
-      next: res => {
+      next: (res) => {
         console.debug("Request:", res);
-        this.request = res as Request;
-        this.request.userName = this.request.user !== undefined ? this.request.user.username : "missing";
+        this.request = res;
       },
-      error: err => {
-        console.error(err);
-      }
-    })
+      error: (err) => console.error(err)
+    });
+    
   }
+  
 
 }

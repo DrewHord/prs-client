@@ -14,30 +14,32 @@ export class SystemService {
 
 _user!: User | null;
 
-_loggedInUser: User = EmptyUser;
-getLoggedInUser(): User{
-return this._loggedInUser;
+get login(){
+  return this._user != null;
 }
 
-setLoggedInUser(user: User): void{
-  this._loggedInUser = user;
+ getlogUser(): User | null{
+  return this._user
 }
 
-chkLogin(): void {
-  if(!this._loggedInUser) {
-    this.router.navigateByUrl("/login");
+setlogUser(user: User) {
+  this._user = user;
+}
+
+clearlogUser(){
+  this._user = null;
+}
+
+isLogged(): void {
+  if(!this.login){
+    this.router.navigateByUrl("/login")
   }
 }
-
-clearLoggedInUser(): void{
-  this.setLoggedInUser(EmptyUser);
-}
+    
   constructor(
     
     private router: Router
-   ) {}
-    
-    
+   ) {}    
 
 
 }

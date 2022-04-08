@@ -1,6 +1,6 @@
 <app-menu></app-menu>
 <div>
-    <span id="pageTitle">Request Detail</span>
+    <span id="pageTitle">Request Change</span>
 </div>
 <table *ngIf="request" class="table table-sm">
     <tr>
@@ -22,7 +22,7 @@
    
     <tr>
         <th>Status:</th>        
-           <td><input [(ngModel)]="request.status" type="text" readonly="New"></td>
+           <td><input [(ngModel)]="request.status" type="text" disabled></td>
     </tr>
     <tr>
         <th>Total:</th>        
@@ -30,7 +30,7 @@
     </tr>
     <tr>
         <th>User:</th>        
-        <td><input [(ngModel)]="request.userName" type="text" disabled=""></td> 
+        <td><input [(ngModel)]="request.user.username" type="text" disabled=""></td> 
     </tr>
 </table>
 <div>

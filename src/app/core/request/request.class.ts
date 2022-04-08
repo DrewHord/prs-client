@@ -6,8 +6,9 @@ export class Request{
     justification: string = "";
     rejectionReason: string = "";
     deliveryMode: string = "";
-    status: string = "";
+    status: string = "New";
     total: number = 0;
+    
     
     userId: number = 0;
     user!: User;

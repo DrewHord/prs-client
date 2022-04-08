@@ -37,7 +37,7 @@ export class ProductEditComponent implements OnInit {
   ngOnInit(): void {
     this.vendsvc.list().subscribe({
       next: (res) => {
-        console.debug("Customers:", res);
+        console.debug("Vendor:", res);
         this.vendors = res;
       },
       error: (err) => { console.error(err); }
@@ -45,7 +45,7 @@ export class ProductEditComponent implements OnInit {
     let id = +this.route.snapshot.params["id"];
     this.prodsvc.get(id).subscribe({
       next: (res) => {
-        console.debug("Vendors:", res);
+        console.debug("Product:", res);
         this.product = res;
       },
       error: (err) => {
