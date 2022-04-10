@@ -4,6 +4,7 @@ import { RequestService } from '../request.service';
 import { Request } from '../request.class';
 import { Requestline } from '../../requestline/requestline.class';
 import { RequestlineService } from '../../requestline/requestline.service';
+import { User } from '../../user/user.class';
 
 
 
@@ -14,7 +15,9 @@ import { RequestlineService } from '../../requestline/requestline.service';
 })
 export class RequestLinesComponent implements OnInit {
 
+ requests: Request[]= [];
   request!: Request;
+  users!:User;
 
   constructor(  
     private reqsvc: RequestService,
@@ -44,11 +47,31 @@ export class RequestLinesComponent implements OnInit {
       error: (err) => console.error(err)
     })
   }
-
-
   
 
+  list(): void {
+    let id = this.route.snapshot.params["id"];
+    this.reqsvc.get(id).subscribe({
+      next: (res) => {
+        console.debug("Request:", res);
+        this.request = res;
+      },
+      error: (err) => console.error(err)
+    });
+  }
+
   ngOnInit(): void {
+    this.list();
+    let id = +this.route.snapshot.params["id"];
+    this.reqsvc.get(id).subscribe({
+      next: (res) => {
+        console.debug("Request:", res);
+        this.request = res;
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
   }
 
 }

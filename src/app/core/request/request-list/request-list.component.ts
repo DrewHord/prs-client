@@ -14,7 +14,7 @@ import { UserService } from '../../user/user.service';
 export class RequestListComponent implements OnInit {
 
   requests: Request[]= [];
-  users: User[]=[];
+  users!: User[];
  
 
   constructor(
