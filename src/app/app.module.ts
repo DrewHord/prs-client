@@ -30,6 +30,8 @@ import { RequestLinesComponent } from './core/request/request-lines/request-line
 
 import { RequestlineCreateComponent } from './core/requestline/requestline-create/requestline-create.component';
 import { RequestlineEditComponent } from './core/requestline/requestline-edit/requestline-edit.component';
+import { RequestReviewListComponent } from './core/request/request-review-list/request-review-list.component';
+import { RequestReviewItemComponent } from './core/request/request-review-item/request-review-item.component';
 
 
 @NgModule({
@@ -60,6 +62,8 @@ import { RequestlineEditComponent } from './core/requestline/requestline-edit/re
 
     RequestlineCreateComponent,
     RequestlineEditComponent,
+    RequestReviewListComponent,
+    RequestReviewItemComponent,
    
     
   ],

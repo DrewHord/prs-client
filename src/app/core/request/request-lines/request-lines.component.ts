@@ -5,6 +5,7 @@ import { Request } from '../request.class';
 import { Requestline } from '../../requestline/requestline.class';
 import { RequestlineService } from '../../requestline/requestline.service';
 import { User } from '../../user/user.class';
+import { SystemService } from 'src/app/system.service';
 
 
 
@@ -15,19 +16,20 @@ import { User } from '../../user/user.class';
 })
 export class RequestLinesComponent implements OnInit {
 
- requests: Request[]= [];
+ 
   request!: Request;
-  users!:User;
+  ;
 
   constructor(  
     private reqsvc: RequestService,
     private route: ActivatedRoute,
     private router: Router,
-    private reqlsvc: RequestlineService
+    private reqlsvc: RequestlineService,
+    private sys: SystemService
   ) { }
 
   edit(rl: Requestline): void {
-    this.router.navigateByUrl(`/requestlines/edit/${rl.id}`)
+    this.router.navigateByUrl(`/requestline/edit/${rl.id}`)
   }
 
   delete(rl: Requestline): void {
@@ -43,9 +45,10 @@ export class RequestLinesComponent implements OnInit {
     this.reqsvc.review(this.request).subscribe({
       next: (res) => {
         console.debug("Review");
+        this.list();
       },
       error: (err) => console.error(err)
-    })
+    });
   }
   
 
@@ -53,14 +56,16 @@ export class RequestLinesComponent implements OnInit {
     let id = this.route.snapshot.params["id"];
     this.reqsvc.get(id).subscribe({
       next: (res) => {
-        console.debug("Request:", res);
+       
         this.request = res;
+        this.list();
       },
       error: (err) => console.error(err)
     });
   }
 
   ngOnInit(): void {
+    this.sys.isLogged();
     this.list();
     let id = +this.route.snapshot.params["id"];
     this.reqsvc.get(id).subscribe({

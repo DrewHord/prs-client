@@ -13,7 +13,7 @@ import { RequestService } from '../request.service';
 export class RequestCreateComponent implements OnInit {
 
   request: Request= new Request();
-  user!: User[]; 
+ 
 
 
   constructor(
@@ -24,12 +24,14 @@ export class RequestCreateComponent implements OnInit {
   ) { }
 
   save(): void {
-    this.reqsvc.create(this.request).subscribe(
-      res => { console.log("Request ADDED", res);
-      this.router.navigateByUrl("/request/list");
-    },
-    err => { console.log(err); }
-    );    
+    this.request.userId = this.sys.getlogUser()!.id;
+    this.reqsvc.create(this.request).subscribe({
+      next: (res) => {
+        console.debug("Request Added");
+        this.router.navigateByUrl("/request/list");
+      },
+      error: (err) => console.error(err)
+    });
   }
 
   ngOnInit(): void {
