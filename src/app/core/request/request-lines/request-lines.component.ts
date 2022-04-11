@@ -6,6 +6,7 @@ import { Requestline } from '../../requestline/requestline.class';
 import { RequestlineService } from '../../requestline/requestline.service';
 import { User } from '../../user/user.class';
 import { SystemService } from 'src/app/system.service';
+import { UserService } from '../../user/user.service';
 
 
 
@@ -16,7 +17,7 @@ import { SystemService } from 'src/app/system.service';
 })
 export class RequestLinesComponent implements OnInit {
 
- 
+  user!: User;
   request!: Request;
   ;
 
@@ -25,7 +26,8 @@ export class RequestLinesComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private reqlsvc: RequestlineService,
-    private sys: SystemService
+    private sys: SystemService,
+    private uservc: UserService
   ) { }
 
   edit(rl: Requestline): void {
