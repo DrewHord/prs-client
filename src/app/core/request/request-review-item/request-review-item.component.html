@@ -8,21 +8,23 @@
         <tr>
             <th>Id</th>
             <th>Description</th>
+            <td *ngIf="request.rejectionReason">Rejection Reason</td>
             <th>Status</th>
             <th>Total</th>
             <th>User</th>
-            <th>Actions</th>         
+                 
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>{{ request.id }}</td>
-            <td>{{ request.description }}</td>           
+            <td>{{ request.description }}</td>  
+            <td *ngIf="request.rejectionReason">{{ request.rejectionReason}}</td>         
             <td>{{ request.status }}</td>
             <td>{{ request.total | currency }}</td>
             <td>{{ request.user.username}}</td>  
             <td>
-                <a routerLink="/request/review/">Review</a>           
+                    
             </td>
         </tr> 
     </tbody>
@@ -40,7 +42,7 @@
             <th>Quantity</th>
             <th>Price</th>
             <th>Line Total</th>
-            <th>Actions</th>            
+                    
         </tr>
     </thead>
     <tbody>
@@ -52,9 +54,13 @@
             <td>{{ rl.product.price * rl.quantity }}</td>
           
             <td>
-                <button (click)="edit(rl)" class="btn btn-link clickable">Edit</button> |
-                <button (click)="delete(rl)" class="btn btn-link clickable">Delete</button>
+                <button (click)="approve()" class="btn btn-link   ">Approve</button> |
+            <button (click)="reject()" class="btn btn-link btn-danger  ">Reject</button>
             </td>
+            <span *ngIf="showverifyButton">
+               <input [(ngModel)]="request.rejectionReason" type="text">
+                 <button (click)="verReject()" class="btn btn-link  fw-bold">Verify Reject</button>
+            </span>
 
         </tr> 
     </tbody>

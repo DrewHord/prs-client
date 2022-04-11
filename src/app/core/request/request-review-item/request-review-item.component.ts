@@ -30,6 +30,7 @@ export class RequestReviewItemComponent implements OnInit {
     this.reqsvc.remove(reql.id).subscribe({
       next: (res) => {
         console.debug("Requestline deleted!");
+        this.list();
       },
       error: (err) => console.error(err)
     });

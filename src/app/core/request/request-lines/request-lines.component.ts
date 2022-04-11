@@ -68,7 +68,6 @@ export class RequestLinesComponent implements OnInit {
 
   ngOnInit(): void {
     this.sys.isLogged();
-    this.list();
     let id = +this.route.snapshot.params["id"];
     this.reqsvc.get(id).subscribe({
       next: (res) => {
@@ -79,6 +78,7 @@ export class RequestLinesComponent implements OnInit {
         console.error(err);
       }
     });
+    this.list();
   }
 
 }
