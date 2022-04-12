@@ -54,10 +54,10 @@
             <td>{{ rl.product.price * rl.quantity }}</td>
           
             <td>
-                <button (click)="approve()" class="btn btn-link   ">Approve</button> |
-            <button (click)="reject()" class="btn btn-link btn-danger  ">Reject</button>
+            <button (click)="approve()" class="btn btn-link clickable  ">Approve</button> |
+            <button (click)="reject()" class="btn btn-link  clickable ">Reject</button>
             </td>
-            <span *ngIf="showverifyButton">
+            <span *ngIf="verifyButton">
                <input [(ngModel)]="request.rejectionReason" type="text">
                  <button (click)="verReject()" class="btn btn-link  fw-bold">Verify Reject</button>
             </span>

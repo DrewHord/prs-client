@@ -31,7 +31,16 @@
     </tr>
     <tr>
         <th>Vendor:</th>        
-        <td><input [(ngModel)]="product.vendorId" type="text"></td> 
+        <td>
+            <select [(ngModel)]="product.vendorId" type="text">
+            <option *ngFor="let v of vendors" value="{{v.id}}">{{v.name}}</option>
+            </select>
+        </td>
     </tr>
 </table>
+<div>
+    <button (click)="save()" class="btn btn-info">Save</button>
+</div>
+
+
 

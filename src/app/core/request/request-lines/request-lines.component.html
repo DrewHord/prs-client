@@ -23,7 +23,7 @@
             <td>{{ request.user.username}}</td>  
             <td>
                 <button (click)="review()" class="btn btn-link clickable">Review</button> |
-                <a routerLink="/request/reviews">Reviews</a>           
+                <a routerLink="/request/reviews"> All Reviews</a>           
             </td>
         </tr> 
     </tbody>
@@ -49,7 +49,7 @@
             <td>{{ rl.id }}</td>
             <td>{{ rl.product.name }}</td>
             <td>{{ rl.quantity }}</td>
-            <td>{{ rl.product.price }}</td>
+            <td>{{ rl.product.price | currency }}</td>
             <td>{{ rl.product.price * rl.quantity }}</td>
           
             <td>

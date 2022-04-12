@@ -13,13 +13,14 @@ import { Request } from '../request.class';
 export class RequestReviewItemComponent implements OnInit {
   
   request!: Request;
-  showverifyButton: boolean = false;
+ verifyButton: boolean = false;
 
   constructor(
-    private sys: SystemService,
+
     private reqsvc: RequestService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private sys: SystemService
   ) { }
 
   edit(reql: Requestline): void {
@@ -51,9 +52,8 @@ export class RequestReviewItemComponent implements OnInit {
     let id = this.route.snapshot.params["id"];
     this.reqsvc.get(id).subscribe({
       next: (res) => {
-       
-        this.request = res;
-        this.list();
+        console.log("Request", res);
+        this.request = res;        
       },
       error: (err) => console.error(err)
     });
@@ -71,11 +71,11 @@ export class RequestReviewItemComponent implements OnInit {
   }
 
   reject(): void {
-    this.showverifyButton = !this.showverifyButton;
+    this.verifyButton = !this.verifyButton;
   }
 
   verReject(): void {
-    this.showverifyButton = false;
+    this.verifyButton = false;
     this.reqsvc.reject(this.request).subscribe({
       next: (res) => {
         console.log("rejected");
@@ -87,6 +87,8 @@ export class RequestReviewItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.list();
+    
+    
   }
 
 }
